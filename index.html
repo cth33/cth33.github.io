@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initializing... | My Personal Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff; 
+            --secondary-accent: #238636; 
+            --card-bg: #161b22;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace; 
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 6px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top Bar of the "Terminal" */
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .red { background-color: #ff5f56; }
+        .yellow { background-color: #ffbd2e; }
+        .green { background-color: #27c93f; }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        /* Typing Animation */
+        .typing-effect {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--accent-color);
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        /* Progress Bar */
+        .loader-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+            margin: 2rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 40%;
+            background: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+            animation: loading 2s ease-in-out infinite;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #8b949e;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; /* Readable font for body */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #21262d;
+            border-color: #8b949e;
+        }
+
+        /* Animations */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color) }
+        }
+
+        @keyframes loading {
+            0% { left: -50%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Terminal Header Dots -->
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+
+        <!-- The "Command" Title -->
+        <h1>
+            <span style="color: var(--secondary-accent);">root@dev:~$</span> 
+            <span class="typing-effect">./deploy_portfolio.sh</span>
+        </h1>
+        
+        <!-- The Animated Loading Bar -->
+        <div class="loader-container">
+            <div class="loader-bar"></div>
+        </div>
+
+        <p>
+            <strong>System Status: Initialization in progress...</strong>
+        </p>
+        <p>
+            I am currently configuring this domain to serve as my hub for cybersecurity research, 
+            tech tutorials, and open-source projects.
+        </p>
+
+        <div class="links">
+            <a href="https://github.com/cth33" class="btn">GitHub</a>
+            <a href="https://linkedin.com/in/constantinos-theocharous" class="btn">LinkedIn</a>
+        </div>
+    </div>
+
+</body>
+</html>
